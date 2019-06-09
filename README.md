@@ -1,4 +1,5 @@
-# Visual Studio Code Compile Settings--DONT USE!!! (use https://github.com/loyno-mathcs/VSC_Compiling_Settings instead!)
+# Visual Studio Code Compile Settings
+
 There are a few items I'd like to get us to figure out:
 
 1. Compile and run a single file using VSC and MinGW (g++). See SingleFileCPP folder. The typical command line would be:
