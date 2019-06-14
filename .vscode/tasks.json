@@ -4,7 +4,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      // requires Ruby plugin (so 'config:ruby.interpreter.commandPath' has a value)
       "label": "Execute Ruby Script",
       "type": "shell",
       "group": "build",
@@ -12,25 +11,68 @@
       "args": [
         "${file}"
       ],
-      "osx": {
-        // OS X specific stuff here
-      },
-      "linux": {
-        // Linux specific stuff here
-      },
-      "windows": {
-        // Windows specific stuff here
-      },
+      "osx": {},
+      "linux": {},
+      "windows": {},
       "presentation": {
         "reveal": "always",
         "panel": "dedicated"
       }
     },
-    // ... TODO: Other build tasks go here.
-    // To run a task:
-    //   * Open Command Palette
-    //   * Type "Tasks"
-    //   * Select "Tasks: Run Task"
-    //   * Select the task you wish to run`
+    {
+      "label": "Build a C/C++ application",
+      "type": "shell",
+      "group": "build",
+      "osx": {
+        "command": "clang++",
+        "args": [
+          "${fileDirname}/*.cpp",
+          "-o",
+          "${fileDirname}/build/${fileBasenameNoExtension}",
+          "-std=c++11",
+          "-O3",
+          "-g3",
+          "-Wall",
+          "-fmessage-length=0",
+          "-march=native",
+          "-v"
+        ],
+      },
+      "linux": {
+        "command": "g++",
+        "args": [
+          "${fileDirname}/*.cpp",
+          "-o",
+          "${fileDirname}/build/${fileBasenameNoExtension}.out",
+          "-std=c++11",
+          "-O3",
+          "-g3",
+          "-Wall",
+          "-fmessage-length=0",
+          "-march=native"
+        ]
+      },
+      "windows": {
+        "command": "g++",
+        "args": [
+          "${fileDirname}/*.cpp",
+          "-o",
+          "${fileDirname}/build/${fileBasenameNoExtension}.exe",
+          "-std=c++11",
+          "-O3",
+          "-g3",
+          "-Wall",
+          "-fmessage-length=0",
+          "-march=native"
+        ]
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
   ]
 }
