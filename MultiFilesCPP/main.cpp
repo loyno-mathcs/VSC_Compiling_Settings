@@ -6,7 +6,7 @@
 int main()
 {
 //    Shape myShape;
-    Line myLine;
+    Line myLine;ksngas
     Color myColor1, myColor2;
     myColor1.setR(50.0);
     myColor2 = myColor1;
