@@ -19,6 +19,7 @@
         "panel": "dedicated"
       }
     },
+    // duplicate this to work for GLUT
     {
       "label": "Build a C/C++ application",
       "type": "shell",
@@ -26,9 +27,9 @@
       "osx": {
         "command": "clang++",
         "args": [
-          "${fileDirname}/*.cpp",
+          "\"${fileDirname}/*.cpp\"",
           "-o",
-          "${fileDirname}/build/${fileBasenameNoExtension}",
+          "\"${fileDirname}/build/${fileBasenameNoExtension}\"",
           "-std=c++11",
           "-O3",
           "-g3",
@@ -41,9 +42,9 @@
       "linux": {
         "command": "g++",
         "args": [
-          "${fileDirname}/*.cpp",
+          "\"${fileDirname}/*.cpp\"",
           "-o",
-          "${fileDirname}/build/${fileBasenameNoExtension}.out",
+          "\"${fileDirname}/build/${fileBasenameNoExtension}.out\"",
           "-std=c++11",
           "-O3",
           "-g3",
@@ -55,9 +56,9 @@
       "windows": {
         "command": "g++",
         "args": [
-          "${fileDirname}/*.cpp",
+          "${fileDirname}\\*.cpp",
           "-o",
-          "${fileDirname}/build/${fileBasenameNoExtension}.exe",
+          "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
           "-std=c++11",
           "-O3",
           "-g3",
@@ -65,6 +66,34 @@
           "-fmessage-length=0",
           "-march=native"
         ]
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "Build and Run a C/C++ application",
+      "type": "shell",
+      "group": "build",
+      "dependsOn": [
+        "Build a C/C++ application"
+      ],
+      "dependsOrder": "sequence",
+      "osx": {
+        "command": "\"${fileDirname}/build/${fileBasenameNoExtension}\"",
+        "args": []
+      },
+      "linux": {
+        "command": "\"${fileDirname}/build/${fileBasenameNoExtension}.out\"",
+        "args": []
+      },
+      "windows": {
+        "command": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+        "args": []
       },
       "presentation": {
         "reveal": "always",
