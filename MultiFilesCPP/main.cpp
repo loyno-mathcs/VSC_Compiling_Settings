@@ -6,6 +6,7 @@
 int main()
 {
 //    Shape myShape;
+
     Line myLine;
     Color myColor1, myColor2;
     myColor1.setR(50.0);
