@@ -92,7 +92,7 @@
         "args": []
       },
       "windows": {
-        "command": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+        "command": "start ${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
         "args": []
       },
       "presentation": {

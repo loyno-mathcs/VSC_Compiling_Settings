@@ -1,0 +1,10 @@
+{
+   "code-runner.clearPreviousOutput": true,
+   "code-runner.saveAllFilesBeforeRun": true,
+   "code-runner.runInTerminal": true,
+   "code-runner.executorMap": {//build\\$fileNameWithoutExt.exe; 
+      "cpp": "cd $dir && C:\\MinGW\\bin\\g++ *.cpp -o build\\$fileNameWithoutExt.exe  -std=c++11 -O3 -g3 -Wall -fmessage-length=0 -march=native && start -WorkingDirectory $dir 'Read-Host -Prompt \"Press enter to continue\"'",
+      "java": "cd $dir && javac *.java && java $fileNameWithoutExt"
+   }
+}
+//https://github.com/formulahendry/vscode-code-runner/issues/416
