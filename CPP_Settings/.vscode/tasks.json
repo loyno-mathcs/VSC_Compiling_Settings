@@ -56,9 +56,9 @@
       "windows": {
         "command": "g++",
         "args": [
-          "${fileDirname}\\*.cpp",
+          "*.cpp",
           "-o",
-          "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+          ".\\build\\${fileBasenameNoExtension}.exe",
           "-std=c++11",
           "-O3",
           "-g3",
@@ -92,7 +92,10 @@
         "args": []
       },
       "windows": {
-        "command": "start ${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+        // With pause in external shell...
+        //"command": "Start-Process cmd '/c .\\build\\${fileBasenameNoExtension}.exe & pause'",
+        // ..or without pause in console area
+        "command": ".\\build\\${fileBasenameNoExtension}.exe",
         "args": []
       },
       "presentation": {

@@ -18,8 +18,8 @@ int main()
     real foo = p1.calcDistance(p2);
     
     cout << "Hello World " << foo << " ds " << endl;
- //   int boo;
-//    cin >> boo;
+  //  int boo;
+  //  cin >> boo;
 	return 0;
 }
 
