@@ -93,9 +93,9 @@
       },
       "windows": {
         // With pause in external shell...
-        //"command": "Start-Process cmd '/c .\\build\\${fileBasenameNoExtension}.exe & pause'",
+        "command": "Start-Process cmd '/c .\\build\\${fileBasenameNoExtension}.exe & pause'",
         // ..or without pause in console area
-        "command": ".\\build\\${fileBasenameNoExtension}.exe",
+        //"command": ".\\build\\${fileBasenameNoExtension}.exe",
         "args": []
       },
       "presentation": {
